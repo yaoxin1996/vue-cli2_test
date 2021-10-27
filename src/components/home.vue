@@ -1,6 +1,9 @@
 <template>
   <div>
-    <h1>我是首页</h1>
+    <h1>我是首页{{$route.query.type}}</h1>
+    <router-link to="/home/news">新闻</router-link>
+    <router-link to="/home/message">消息</router-link>
+    <router-view></router-view>
   </div>
 </template>
 
