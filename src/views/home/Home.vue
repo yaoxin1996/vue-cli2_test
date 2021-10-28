@@ -1,16 +1,13 @@
 <template>
-  <div id="app">
+  <div>
+    首页
   </div>
 </template>
 <script>
 export default {
-  name: 'App',
-  data () {
-    return {}
-  },
-  methods: {
-  }
+
 }
 </script>
 <style scoped>
+
 </style>
