@@ -44,7 +44,10 @@ const routes = [
 const router = new VueRouter({
   // 配置路由和组件之间的映射关系
   routes,
-  mode: 'history'
+  // 默认hash 路径上带#,history不带#
+  mode: 'history',
+  // 修改路由匹配成功时的类名，默认为router-link-active
+  linkActiveClass: 'active'
 })
 
 // 3. 挂载到Vue实例上 (在main.js页面挂载)
