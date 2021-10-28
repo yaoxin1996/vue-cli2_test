@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <router-link to="/home">首页</router-link>
-    <router-link to="/about">关于</router-link>
+    <button @click="toHome">首页</button>
+    <router-link :to="'/about/' + msg">关于</router-link>
     <router-view></router-view>
   </div>
 </template>
@@ -9,9 +9,21 @@
 <script>
 
 export default {
-  name: 'App'
+  name: 'App',
+  data () {
+    return {
+      msg: 'aaa'
+    }
+  },
+  methods: {
+    toHome () {
+      this.$router.push('/home')
+    }
+  }
 }
 </script>
-
-<style>
+<style scoped>
+.active {
+  color: #fff;
+}
 </style>
