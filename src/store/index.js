@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import { SUBNUM } from './mutation_types'
 
 // 安装vuex
 Vue.use(Vuex)
@@ -12,12 +13,15 @@ const store = new Vuex.Store({
   },
   // 同步修改state时
   mutations: {
-    subNum (state, val) {
+    [SUBNUM] (state, val) {
       state.num = state.num * 2 + val
     },
     editVal (state, val) {
       console.log(val)
       // state.text += val
+    },
+    changeText (state, val) {
+      state.text += val
     }
   },
   getters: {
@@ -28,6 +32,18 @@ const store = new Vuex.Store({
       return val => {
         return state.text + val
       }
+    }
+  },
+  // 异步修改state
+  actions: {
+    timeOut (context, payload) {
+      console.log(context)
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          context.commit('changeText', payload)
+          resolve('111')
+        }, 1000)
+      })
     }
   }
 })
