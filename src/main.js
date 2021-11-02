@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from '@/App'
 import router from '@/router'
 import store from '@/store'
-import axios from 'axios'
+// import axios from 'axios'
 Vue.config.productionTip = false
 
 // 123.207.32.32:8000/home/multidata
@@ -15,11 +15,11 @@ new Vue({
   render: h => h(App)
 })
 
-axios.defaults.baseURL = 'http://123.207.32.32:8000'
-axios.defaults.timeout = 5000
+// axios.defaults.baseURL = 'http://123.207.32.32:8000'
+// axios.defaults.timeout = 5000
 
-axios({
-  url: '/home/multidata'
-}).then(res => {
-  console.log(res)
-})
+// axios({
+//   url: '/home/multidata'
+// }).then(res => {
+//   console.log(res)
+// })
